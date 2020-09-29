@@ -299,7 +299,7 @@ EOF;
         }
 
         return new Response(
-            $internalResponse->getStatus(),
+            $internalResponse->getStatusCode(),
             $internalResponse->getHeaders(),
             $internalResponse->getContent()
         );

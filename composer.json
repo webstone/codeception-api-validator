@@ -7,6 +7,11 @@
             "email": "wuttig@mailbox.org"
         }
     ],
+    "config": {
+        "platform": {
+            "php": "7.2"
+        }
+    },
     "require": {
         "codeception/codeception": "^4.0",
         "codeception/module-phpbrowser": "^1.0.0",

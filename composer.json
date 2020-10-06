@@ -7,18 +7,13 @@
             "email": "wuttig@mailbox.org"
         }
     ],
-    "config": {
-        "platform": {
-            "php": "7.2"
-        }
-    },
     "require": {
         "codeception/codeception": "^4.0",
         "codeception/module-phpbrowser": "^1.0.0",
         "codeception/module-rest": "^1.0.0",
         "eleven-labs/api-validator": "~0.6.0",
         "symfony/serializer": "^5.1",
-        "php": "~7.2.0"
+        "php": "^7.2"
     },
     "require-dev": {
         "phpunit/phpunit": "~6.4",

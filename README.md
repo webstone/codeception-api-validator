@@ -1,5 +1,5 @@
 # codeception-api-validator
-Validate API Requests and Responses against Swagger / OpenAPI definitions
+Validate API Requests and Responses against Swagger / OpenAPI 3.0 definitions
 
 ## Installation
 
@@ -16,13 +16,13 @@ You can use this module as any other Codeception module, by adding 'ApiValidator
 
 ### Enable module and setup the configuration variables
 
-- The `schema` could be set in config file directly and via `$I->haveOpenApiSchema` or `$I->haveSwaggerSchema`
+- The `schema` should be set in config file directly.
 
 ```yml
 modules:
     enabled:
         - ApiValidator:
-            depends: REST
+            depends: [REST, PhpBrowser]
             schema: '/tests/_data/swagger.yaml'
             
  ```  
@@ -38,7 +38,7 @@ Update Codeception build
 ```php
   $I->wantToTest('Validate request and response against OpenAPI Specification.');
   
-  $I->sendGET('api/foo/bar');
+  $I->sendGet('api/foo/bar');
   
   $I->seeRequestIsValid();
   $I->seeResponseIsValid(); 
@@ -60,7 +60,7 @@ Validates the current request against the current schema definiton.
 Validates the current response against the current schema definiton.
 
 ```php
-  $I->seeRequestIsValid();
+  $I->seeResponseIsValid();
   
 ```
 
@@ -70,27 +70,6 @@ Validates the current request and response against the current schema definiton.
 
 ```php
   $I->seeRequestAndResponseAreValid();
-  
-```
-
-
-#### haveOpenAPISchema()
-
-Set the path to the OpenAPI Schema Specification
-
-```php
-  $schema = 'file://' . codecept_root_dir('../../web/api/documentation/swagger.yaml');
-  $I->haveOpenAPISchema($schema);
-  
-```
-
-#### haveSwaggerSchema()
-
-Set the path to the Swagger Schema Specification
-
-```php
-  $schema = 'file://' . codecept_root_dir('../../web/api/documentation/swagger.yaml');
-  $I->haveSwaggerSchema($schema);
   
 ```
 

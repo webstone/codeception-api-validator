@@ -14,7 +14,6 @@ namespace Codeception\Module;
  *
  */
 
-use Codeception\Exception\ModuleException;
 use Codeception\Lib\InnerBrowser;
 use Codeception\Lib\Interfaces\DependsOnModule;
 use Codeception\Module;
@@ -46,7 +45,7 @@ class ApiValidator extends Module implements DependsOnModule
     ];
 
     protected $dependencyMessage = <<<EOF
-Example configuring REST as backend for ApiValidator module.
+Example suite configuring REST and PhpBrowser as backend for ApiValidator module.
 --
 modules:
     enabled:

@@ -1,5 +1,5 @@
 # codeception-api-validator
-Validate API Requests and Responses against Swagger / OpenAPI definitions
+Validate API Requests and Responses against Swagger / OpenAPI 2.0 definitions
 
 ## Installation
 
@@ -22,7 +22,7 @@ You can use this module as any other Codeception module, by adding 'ApiValidator
 modules:
     enabled:
         - ApiValidator:
-            depends: REST
+            depends: [REST, PhpBrowser]
             schema: '/tests/_data/swagger.yaml'
             
  ```  
@@ -38,7 +38,7 @@ Update Codeception build
 ```php
   $I->wantToTest('Validate request and response against OpenAPI Specification.');
   
-  $I->sendGET('api/foo/bar');
+  $I->sendGet('api/foo/bar');
   
   $I->seeRequestIsValid();
   $I->seeResponseIsValid(); 
@@ -60,7 +60,7 @@ Validates the current request against the current schema definiton.
 Validates the current response against the current schema definiton.
 
 ```php
-  $I->seeRequestIsValid();
+  $I->seeResponseIsValid();
   
 ```
 
